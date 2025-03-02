@@ -1,0 +1,23 @@
+singleServerConfig:
+  idleConnectionTimeout: 10000  # 连接空闲超时时间，单位毫秒
+  pingTimeout: 1000             # Ping 超时时间，单位毫秒
+  connectTimeout: 10000         # 连接超时时间，单位毫秒
+  timeout: 3000                 # 操作超时时间，单位毫秒
+  retryAttempts: 3              # 连接重试次数
+  retryInterval: 1500           # 连接重试间隔时间，单位毫秒
+  reconnectionTimeout: 3000     # 重新连接超时时间，单位毫秒
+  failedAttempts: 3             # 连接失败重试次数
+  password: root                # Redis 访问密码
+  subscriptionsPerConnection: 5 # 每个连接的最大订阅数量
+  clientName: null              # 客户端名称
+  address: "redis://localhost:6379"  # Redis 服务器地址
+  subscriptionConnectionMinimumIdleSize: 1  # 订阅连接最小空闲数量
+  subscriptionConnectionPoolSize: 50       # 订阅连接池大小
+  connectionMinimumIdleSize: 32   # 连接最小空闲数量
+  connectionPoolSize: 64         # 连接池大小
+  database: 0                    # Redis 数据库索引编号
+  dnsMonitoringInterval: 5000    # DNS 监控间隔时间，单位毫秒
+
+threads: 0      # 线程数，默认为0表示使用Redisson的默认配置
+nettyThreads: 0 # Netty 线程数，默认为0表示使用Redisson的默认配置
+codec: !<org.redisson.codec.JsonJacksonCodec> {}  # Redisson 使用的编解码器，这里使用了 JsonJacksonCodec
